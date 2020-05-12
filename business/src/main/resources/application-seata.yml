@@ -6,11 +6,11 @@ seata:
 #  use-jdk-proxy: false
 #  enable-auto-data-source-proxy: true
   registry:
-    type: eureka
-    eureka:
-      service-url: ${eureka.client.service-url.defaultZone}
-      application: seata-server
-#      weight: 1
+    type: nacos
+    nacos:
+      server-addr: localhost:8848
+      cluster: default
+#      application: seata-server
   service:
     vgroup-mapping:
       business_tx_group: seata-server

@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
   profiles:
     include:
       - seata
@@ -16,9 +20,4 @@ spring:
     hibernate:
       ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-eureka:
-  instance:
-    hostname: 127.0.0.1
-  client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
